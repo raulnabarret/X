@@ -1,35 +1,30 @@
-MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO1.   1-16-2015  18:51:51         PAGE  1
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO1.   1-18-2015  17:27:53         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                      00001 
-                      00002 ;----------------------------------------------------
-                      00003 
-Warning[205]: Found directive in column 1. (list)
-                      00004 list p=16f84
-                      00005 
-  0000000C            00006 suma1   equ   0X0C      ;Variable 1 asignada a un direccion en Hexa
-  0000000D            00007 suma2   equ   0X0D      ;Variable 2 asignada a un direccion en Hexa
-  0000000E            00008 result  equ   0X0E      ;Variable result asignada a un direccion en Hexa
+                      00001         list p=16f84
+                      00002 
+  0000000C            00003 suma1   equ     0X0C
+  0000000D            00004 suma2   equ     0X0D
+  0000000E            00005 resul   equ     0X0E
+                      00006 
+                      00007 reset   org     0
+0000   2???           00008         goto    inicio
                       00009 
-                      00010 ;----------------------------------------------------
+                      00010         org     5
                       00011 
-                      00012 reset   org   0         ;el vector de reset es la direccion 00
-0000   2???           00013         goto  inicio    ;se salta al inicio del programa
-                      00014         org   5         ;el programa empieza en la direccion de memoria 5
-                      00015 
-0005   3005           00016 inicio  movlw 0X05      ;se carga el numero 5 en w
-0006   008C           00017         movwf suma1     ;guardamos 5 en suma1
-0007   3002           00018         movlw 0X02      ;se carga el numero 2 en w
-0008   008D           00019         movwf suma2     ;guardamos 2 en suma2
-0009   008C           00020         movwf suma1     ;traemos suma1
-000A   070D           00021         addwf suma2,0  ;sumamos suma1 + suma2
-000B   008E           00022         movwf result    ;guardamos el resultado en result
-                      00023 
-                      00024         end
-MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO1.   1-16-2015  18:51:51         PAGE  2
+0005   3005           00012 inicio  movlw   0X05
+0006   008C           00013         movwf   suma1
+0007   3002           00014         movlw   0X02
+0008   008D           00015         movwf   suma2
+0009   080C           00016         movfw   suma1
+000A   070D           00017         addwf   suma2,0
+000B   008E           00018         movwf   resul
+                      00019 
+                      00020         end
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO1.   1-18-2015  17:27:53         PAGE  2
 
 
 SYMBOL TABLE
@@ -38,12 +33,12 @@ SYMBOL TABLE
 __16F84                           00000001
 inicio                            00000005
 reset                             00000000
-result                            0000000E
+resul                             0000000E
 suma1                             0000000C
 suma2                             0000000D
 
 Errors   :     0
-Warnings :     1 reported,     0 suppressed
+Warnings :     0 reported,     0 suppressed
 Messages :     0 reported,     0 suppressed
 
 
