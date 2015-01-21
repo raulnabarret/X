@@ -1,4 +1,4 @@
-MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO2.   1-20-2015  18:09:55         PAGE  1
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO2.   1-20-2015  18:11:29         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -25,13 +25,14 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0009   008E           00019         movwf   result   ;se carga el registro W en la dirección de memoria de result
                       00020 
                       00021         end
-MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO2.   1-20-2015  18:09:55         PAGE  2
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO2.   1-20-2015  18:11:29         PAGE  2
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
 __16F84                           00000001
+__DEBUG                           
 inicio                            00000005
 reset                             00000000
 result                            0000000E
