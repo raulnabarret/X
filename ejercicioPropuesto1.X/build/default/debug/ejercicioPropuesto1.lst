@@ -1,0 +1,45 @@
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJERCICIO   1-20-2015  18:30:07         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;Este programa suma en binario 3 numeros, 0000, 0001, 0010 y 0011
+                      00002 
+                      00003         list p=16f84
+  0000000C            00004 suma1   equ     0X0C
+  0000000E            00005 result  equ     0X0E
+                      00006 
+                      00007 reset   org     0
+0000   2???           00008         goto    inicio
+                      00009         org     5
+                      00010 
+0005   3001           00011 inicio  movlw   b'0001'
+0006   008C           00012         movwf   suma1
+0007   3002           00013         movlw   b'0010'
+0008   078C           00014         addwf   suma1,1
+0009   3003           00015         movlw   b'0011'
+000A   078C           00016         addwf   suma1,1
+000B   3000           00017         movlw   b'0000'
+000C   070C           00018         addwf   suma1,0
+000D   008E           00019         movwf   result
+                      00020 
+                      00021         end
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJERCICIO   1-20-2015  18:30:07         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F84                           00000001
+__DEBUG                           
+inicio                            00000005
+reset                             00000000
+result                            0000000E
+suma1                             0000000C
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+
