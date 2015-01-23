@@ -2,7 +2,8 @@
 
 suma1   equ     0X0C
 suma2   equ     0X0D
-resul   equ     0X0E
+suma3   equ     0X0E
+result  equ     0X0F
 
 reset   org     0
         goto    inicio
@@ -13,7 +14,7 @@ inicio  movlw   0X05
         movwf   suma1
         movlw   0X02
         movwf   suma2
-        movlw   suma1
+        movfw   suma1
         addwf   suma2,0
         movwf   resul
 

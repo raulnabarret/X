@@ -1,0 +1,48 @@
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJERCICIO   1-23-2015  9:38:03         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001         list p=16f84
+                      00002 
+  0000000C            00003 suma1   equ     0X0C
+  0000000D            00004 suma2   equ     0X0D
+  0000000E            00005 suma3   equ     0X0E
+  0000000F            00006 result  equ     0X0F
+                      00007 
+                      00008 reset   org     0
+0000   2???           00009         goto    inicio
+                      00010 
+                      00011         org     5
+                      00012 
+0005   3005           00013 inicio  movlw   0X05
+0006   008C           00014         movwf   suma1
+0007   3002           00015         movlw   0X02
+0008   008D           00016         movwf   suma2
+0009   080C           00017         movfw   suma1
+000A   070D           00018         addwf   suma2,0
+Error[113]  : Symbol not previously defined (resul)
+000B   0080           00019         movwf   resul
+                      00020 
+                      00021         end
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJERCICIO   1-23-2015  9:38:03         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F84                           00000001
+__DEBUG                           
+inicio                            00000005
+reset                             00000000
+result                            0000000F
+suma1                             0000000C
+suma2                             0000000D
+suma3                             0000000E
+
+Errors   :     1
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+
