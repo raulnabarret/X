@@ -1,3 +1,4 @@
+;Este programa realiza la operación rotar a la izquierda un registro.
         list p=16f84
 
 reg1    equ     0XA0        ;direccion en Hexadecimal del operando1
