@@ -1,0 +1,47 @@
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJERCICIO   1-25-2015  17:54:00         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;Intercambiar los 4 bits menos significativos por los cuatro más significativos del valor b'00111010', a
+                            lmacenarlos en un registro
+                      00002 
+                      00003         list p=16f84
+                      00004 
+  000000A0            00005 reg1    equ     0XA0        ;dirección en Hexa del registro1
+  000000A2            00006 result  equ     0XA2        ;dirección en Hexa de result
+                      00007 
+                      00008 reset   org     0           ;el vector de reset es 00
+0000   2???           00009         goto    inicio      ;se salta al inicio del programa
+                      00010         org     5           ;el programa empieza en la dirección 05
+                      00011 
+0005   303A           00012 inicio  movlw   b'00111010' ;cargamos el numero binario al registro w
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0006   00A0           00013         movwf   reg1        ;cargamos el registro w en reg1
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0007   0EA0           00014         swapf   reg1,1
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0008   0820           00015         movfw   reg1
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0009   00A2           00016         movwf   result
+                      00017 
+                      00018         end
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJERCICIO   1-25-2015  17:54:00         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F84                           00000001
+__DEBUG                           
+inicio                            00000005
+reg1                              000000A0
+reset                             00000000
+result                            000000A2
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     4 reported,     0 suppressed
+
+

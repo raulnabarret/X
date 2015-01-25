@@ -10,9 +10,9 @@ reset   org     0           ;el vector de reset es 00
         goto    inicio      ;se salta al inicio del programa
         org     5           ;el programa empieza en la dirección 05
 
-inicio  movlw   b'00110101' ;se carga OCH en el registro w
-        movwf   val1        ;se carga el registro w en reg1
-        xorlw   b'10100110' ;realizamos OR entre w y 30H y lo almacenamos en w
+inicio  movlw   b'00110101' ;
+        movwf   val1        ;
+        xorlw   b'10100110' ;
         movwf   result      ;se carga e registro w en result
         end                 ;fin del programa
 
