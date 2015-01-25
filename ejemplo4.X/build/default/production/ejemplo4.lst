@@ -1,0 +1,44 @@
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO4.   1-23-2015  18:36:36         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001                 list p=16f84
+  0000001A            00002 valor   equ             1AH             ;dirección en Hexa del operando1
+  0000002A            00003 result  equ             2AH             ;dirección en Hexa del resultado
+                      00004 
+                      00005 reset   org             0
+0000   2???           00006                 goto    inicio
+                      00007                 org             5
+                      00008 
+0005   3005           00009 inicio  movlw   h'5'    ;se carga el 5 en el registro w
+0006   009A           00010                 movwf   valor   ;se carga el registro W en valor
+0007   0A9A           00011                 incf    valor,1 ;se incrementa valor
+0008   0A9A           00012                 incf    valor,1
+0009   0A9A           00013                 incf    valor,1
+000A   0A9A           00014                 incf    valor,1
+000B   0A9A           00015                 incf    valor,1
+000C   0A9A           00016                 incf    valor,1
+                      00017 
+000D   081A           00018                 movfw   valor
+000E   00AA           00019                 movwf   result
+                      00020 
+                      00021                 end
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO4.   1-23-2015  18:36:36         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F84                           00000001
+inicio                            00000005
+reset                             00000000
+result                            0000002A
+valor                             0000001A
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

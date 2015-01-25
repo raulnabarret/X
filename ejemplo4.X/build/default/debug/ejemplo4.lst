@@ -1,0 +1,48 @@
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO4.   1-23-2015  18:39:02         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;Programa que incrementa en uno el valor de 5
+                      00002 
+                      00003                 list p=16f84
+                      00004 
+  0000001A            00005 valor   equ             1AH             ;dirección en Hexa del operando1
+  0000002A            00006 result  equ             2AH             ;dirección en Hexa del resultado
+                      00007 
+                      00008 reset   org             0
+0000   2???           00009                 goto    inicio
+                      00010                 org             5
+                      00011 
+0005   3005           00012 inicio  movlw   h'5'    ;se carga el 5 en el registro w
+0006   009A           00013                 movwf   valor   ;se carga el registro W en valor
+0007   0A9A           00014                 incf    valor,1 ;se incrementa valor
+0008   0A9A           00015                 incf    valor,1
+0009   0A9A           00016                 incf    valor,1
+000A   0A9A           00017                 incf    valor,1
+000B   0A9A           00018                 incf    valor,1
+000C   0A9A           00019                 incf    valor,1
+                      00020 
+000D   081A           00021                 movfw   valor
+000E   00AA           00022                 movwf   result
+                      00023 
+                      00024                 end
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO4.   1-23-2015  18:39:02         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F84                           00000001
+__DEBUG                           
+inicio                            00000005
+reset                             00000000
+result                            0000002A
+valor                             0000001A
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+
