@@ -1,0 +1,50 @@
+MPASM 5.60  /USERS/ADMIN/MPLABXPROJECTS/EJER   1-23-2015  17:45:57         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;Sumar 2 números, almacenar el resultado en 0x0d, borrar el registro SUM y borrar el acumulador W.
+                      00002 
+                      00003 
+                      00004         list p=16f84     ;microchip
+                      00005 
+  0000000C            00006 suma1   equ     0X0C    ;dirección hexadecimal del operando1
+  0000000D            00007 sum     equ     0X0D    ;dirección en Hexadecimal
+                      00008 
+                      00009 ;------------------------------------------------
+                      00010 
+                      00011 reset   org     0       ;el vector de reset es la dirección 00
+0000   2???           00012         goto    inicio  ;se salta al inicio del programa
+                      00013         org     5       ;el programa inicia en la dirección
+                      00014 
+                      00015 
+0005   3001           00016 inicio  movlw   b'0001' ;se carga el 0001 binario
+0006   008C           00017         movwf   suma1   ;se carga el registro w en la dirección de memoria de suma1
+0007   3002           00018         movlw   b'0010' ;se carga el 0010 en binario
+0008   070C           00019         addwf   suma1,0 ;se suma el valor en W y suma1, y el resultado se queda en W
+0009   008D           00020         movwf   sum     ;se carga el registro W en la dirección de memoria de sum
+000A   0103           00021         clrw
+000B   018D           00022         clrf    sum
+                      00023 
+                      00024 
+                      00025 
+                      00026         end
+MPASM 5.60  /USERS/ADMIN/MPLABXPROJECTS/EJER   1-23-2015  17:45:57         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F84                           00000001
+__DEBUG                           
+inicio                            00000005
+reset                             00000000
+sum                               0000000D
+suma1                             0000000C
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

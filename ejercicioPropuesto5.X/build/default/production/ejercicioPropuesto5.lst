@@ -1,0 +1,45 @@
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJERCICIO   1-25-2015  11:49:25         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;Decrementar el valor 10 cinco veces y almacenarlo en la dirección 0x2b.
+                      00002 
+                      00003                 list p=16f84
+  0000000A            00004 valor   equ             0X0A    ;Dirección en Hexa de valor
+  0000002B            00005 result  equ             0X2B    ;Dirección en Hexa de result
+                      00006 
+                      00007 reset   org             0               ;El vector reset empieza en la dirección 00
+0000   2???           00008                 goto    inicio  ;Se salta al inicio del programa
+                      00009 
+                      00010                 org             5               ;El programa inicia en la dirección 05
+                      00011 
+0005   300B           00012 inicio  movlw   0XB     ;Se carga el 10 en el registro w
+0006   008A           00013                 movwf   valor   ;Se carga el registro w en la dirección valor
+0007   038A           00014                 decf    valor,1 ;Se decrementa el valor
+0008   038A           00015                 decf    valor,1
+0009   038A           00016                 decf    valor,1
+000A   038A           00017                 decf    valor,1
+000B   038A           00018                 decf    valor,1
+000C   080A           00019                 movfw   valor   ;Se carga la dirección valor
+000D   00AB           00020                 movwf   result  ;Se carga el registro w en la dirección result
+                      00021 
+                      00022                 end                             ;fin del programa
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJERCICIO   1-25-2015  11:49:25         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F84                           00000001
+inicio                            00000005
+reset                             00000000
+result                            0000002B
+valor                             0000000A
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

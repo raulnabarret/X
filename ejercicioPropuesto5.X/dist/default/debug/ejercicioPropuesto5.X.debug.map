@@ -1,12 +1,12 @@
 MPLINK 5.06, LINKER
-Linker Map File - Created Sun Jan 25 11:27:13 2015
+Linker Map File - Created Sun Jan 25 11:49:26 2015
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
                 ---------  ---------  ---------  ---------  ---------
                    .org_0       code   0x000000    program   0x000002
                    .cinit    romdata   0x000001    program   0x000004
-                   .org_1       code   0x000005    program   0x00000a
+                   .org_1       code   0x000005    program   0x000012
 
 
 
@@ -14,23 +14,23 @@ Linker Map File - Created Sun Jan 25 11:27:13 2015
                                Start         End      
                            ---------   ---------      
                             0x000000    0x000002      
-                            0x000005    0x000009      
-            8 out of 1093 program addresses used, program memory utilization is 0%
+                            0x000005    0x00000d      
+            12 out of 1093 program addresses used, program memory utilization is 1%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                   inicio   0x000005    program     static /Users/Admin/Desktop/X/ejercicioPropuesto5.X/ejercicioPropuesto4.asm
-                    reset   0x000000    program     static /Users/Admin/Desktop/X/ejercicioPropuesto5.X/ejercicioPropuesto4.asm
+                   inicio   0x000005    program     static /Users/Admin/Desktop/X/ejercicioPropuesto5.X/ejercicioPropuesto5.asm
+                    reset   0x000000    program     static /Users/Admin/Desktop/X/ejercicioPropuesto5.X/ejercicioPropuesto5.asm
 
 
 
                               Symbols - Sorted by Address
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                    reset   0x000000    program     static /Users/Admin/Desktop/X/ejercicioPropuesto5.X/ejercicioPropuesto4.asm
-                   inicio   0x000005    program     static /Users/Admin/Desktop/X/ejercicioPropuesto5.X/ejercicioPropuesto4.asm
+                    reset   0x000000    program     static /Users/Admin/Desktop/X/ejercicioPropuesto5.X/ejercicioPropuesto5.asm
+                   inicio   0x000005    program     static /Users/Admin/Desktop/X/ejercicioPropuesto5.X/ejercicioPropuesto5.asm
 
 

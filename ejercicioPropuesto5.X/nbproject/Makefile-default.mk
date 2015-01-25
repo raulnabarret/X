@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=ejercicioPropuesto4.asm
+SOURCEFILES_QUOTED_IF_SPACED=ejercicioPropuesto5.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ejercicioPropuesto4.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/ejercicioPropuesto4.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ejercicioPropuesto5.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/ejercicioPropuesto5.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/ejercicioPropuesto4.o
+OBJECTFILES=${OBJECTDIR}/ejercicioPropuesto5.o
 
 # Source Files
-SOURCEFILES=ejercicioPropuesto4.asm
+SOURCEFILES=ejercicioPropuesto5.asm
 
 
 CFLAGS=
@@ -82,22 +82,22 @@ MP_LINKER_DEBUG_OPTION=
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/ejercicioPropuesto4.o: ejercicioPropuesto4.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/ejercicioPropuesto5.o: ejercicioPropuesto5.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ejercicioPropuesto4.o.d 
-	@${RM} ${OBJECTDIR}/ejercicioPropuesto4.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/ejercicioPropuesto4.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG  -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/ejercicioPropuesto4.lst\\\" -e\\\"${OBJECTDIR}/ejercicioPropuesto4.err\\\" $(ASM_OPTIONS)   -o\\\"${OBJECTDIR}/ejercicioPropuesto4.o\\\" \\\"ejercicioPropuesto4.asm\\\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/ejercicioPropuesto4.o"
-	@${FIXDEPS} "${OBJECTDIR}/ejercicioPropuesto4.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/ejercicioPropuesto5.o.d 
+	@${RM} ${OBJECTDIR}/ejercicioPropuesto5.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/ejercicioPropuesto5.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG  -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/ejercicioPropuesto5.lst\\\" -e\\\"${OBJECTDIR}/ejercicioPropuesto5.err\\\" $(ASM_OPTIONS)   -o\\\"${OBJECTDIR}/ejercicioPropuesto5.o\\\" \\\"ejercicioPropuesto5.asm\\\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/ejercicioPropuesto5.o"
+	@${FIXDEPS} "${OBJECTDIR}/ejercicioPropuesto5.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 else
-${OBJECTDIR}/ejercicioPropuesto4.o: ejercicioPropuesto4.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/ejercicioPropuesto5.o: ejercicioPropuesto5.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ejercicioPropuesto4.o.d 
-	@${RM} ${OBJECTDIR}/ejercicioPropuesto4.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/ejercicioPropuesto4.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/ejercicioPropuesto4.lst\\\" -e\\\"${OBJECTDIR}/ejercicioPropuesto4.err\\\" $(ASM_OPTIONS)   -o\\\"${OBJECTDIR}/ejercicioPropuesto4.o\\\" \\\"ejercicioPropuesto4.asm\\\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/ejercicioPropuesto4.o"
-	@${FIXDEPS} "${OBJECTDIR}/ejercicioPropuesto4.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/ejercicioPropuesto5.o.d 
+	@${RM} ${OBJECTDIR}/ejercicioPropuesto5.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/ejercicioPropuesto5.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/ejercicioPropuesto5.lst\\\" -e\\\"${OBJECTDIR}/ejercicioPropuesto5.err\\\" $(ASM_OPTIONS)   -o\\\"${OBJECTDIR}/ejercicioPropuesto5.o\\\" \\\"ejercicioPropuesto5.asm\\\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/ejercicioPropuesto5.o"
+	@${FIXDEPS} "${OBJECTDIR}/ejercicioPropuesto5.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 endif
 
