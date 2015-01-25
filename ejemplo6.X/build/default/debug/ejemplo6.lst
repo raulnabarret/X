@@ -1,0 +1,49 @@
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO6.   1-25-2015  13:47:30         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001         list p=16f84
+                      00002 
+  000000A0            00003 reg1    equ     0XA0
+  000000A1            00004 reg2    equ     0XA1
+  000000A2            00005 result  equ     0XA2
+                      00006 
+                      00007 reset   org     0
+0000   2???           00008         goto    inicio
+                      00009 
+                      00010         org     5
+                      00011 
+0005   3073           00012 inicio  movlw   b'01110011'
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0006   00A0           00013         movwf   reg1
+0007   3055           00014         movlw   b'01010101'
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0008   00A1           00015         movwf   reg2
+                      00016 
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0009   0520           00017         andwf   reg1,0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+000A   00A2           00018         movwf   result
+                      00019 
+                      00020         end
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO6.   1-25-2015  13:47:30         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F84                           00000001
+__DEBUG                           
+inicio                            00000005
+reg1                              000000A0
+reg2                              000000A1
+reset                             00000000
+result                            000000A2
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     4 reported,     0 suppressed
+
+
