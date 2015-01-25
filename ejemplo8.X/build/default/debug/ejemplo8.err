@@ -1,0 +1,6 @@
+Message[302] /Users/Admin/Desktop/X/ejemplo8.X/ejemplo8.asm 10 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] /Users/Admin/Desktop/X/ejemplo8.X/ejemplo8.asm 11 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] /Users/Admin/Desktop/X/ejemplo8.X/ejemplo8.asm 12 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] /Users/Admin/Desktop/X/ejemplo8.X/ejemplo8.asm 13 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] /Users/Admin/Desktop/X/ejemplo8.X/ejemplo8.asm 14 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[205] /Users/Admin/Desktop/X/ejemplo8.X/ejemplo8.asm 16 : Found directive in column 1. (end)

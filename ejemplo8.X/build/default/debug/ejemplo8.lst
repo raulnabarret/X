@@ -1,0 +1,45 @@
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO8.   1-25-2015  14:26:12         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001         list p=16f84
+                      00002 
+  000000A0            00003 reg1    equ     0XA0
+                      00004 
+                      00005 reset   org     0
+0000   2???           00006         goto    inicio
+                      00007         org     5
+                      00008 
+0005   300C           00009 inicio  movlw   b'0001100'
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0006   00A0           00010         movwf   reg1
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0007   0DA0           00011         rlf     reg1,1
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0008   0DA0           00012         rlf     reg1,1
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0009   0DA0           00013         rlf     reg1,1
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+000A   0DA0           00014         rlf     reg1,1
+                      00015 
+Warning[205]: Found directive in column 1. (end)
+                      00016 end
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO8.   1-25-2015  14:26:12         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F84                           00000001
+__DEBUG                           
+inicio                            00000005
+reg1                              000000A0
+reset                             00000000
+
+Errors   :     0
+Warnings :     1 reported,     0 suppressed
+Messages :     5 reported,     0 suppressed
+
+
