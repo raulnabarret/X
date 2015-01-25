@@ -1,0 +1,43 @@
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJERCICIO   1-25-2015  17:18:27         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ; Realizar una OR Exclusiva de val1='00110101' y val2='10100110'
+                      00002 
+                      00003         list p=16f84
+                      00004 
+  000000A0            00005 val1    equ     0XA0        ;dirección en Hexa del registro1
+  000000A1            00006 val2    equ     0XA1        ;dirección en Hexa del registro2
+  000000A2            00007 result  equ     0XA2        ;dirección en Hexa de result
+                      00008 
+                      00009 reset   org     0           ;el vector de reset es 00
+0000   2???           00010         goto    inicio      ;se salta al inicio del programa
+                      00011         org     5           ;el programa empieza en la dirección 05
+                      00012 
+0005   3035           00013 inicio  movlw   b'00110101' ;se carga OCH en el registro w
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0006   00A0           00014         movwf   val1        ;se carga el registro w en reg1
+0007   3AA6           00015         xorlw   b'10100110' ;realizamos OR entre w y 30H y lo almacenamos en w
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0008   00A2           00016         movwf   result      ;se carga e registro w en result
+                      00017         end                 ;fin del programa
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJERCICIO   1-25-2015  17:18:27         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F84                           00000001
+inicio                            00000005
+reset                             00000000
+result                            000000A2
+val1                              000000A0
+val2                              000000A1
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     2 reported,     0 suppressed
+
+
