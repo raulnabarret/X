@@ -1,0 +1,41 @@
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO9.   1-26-2015  14:24:18         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;Interruptores y LEDs conectados a los puertos
+                      00002 
+                      00003         list p=16f84
+                      00004 
+                      00005 reset   org     0           ;el vector de reset es la direccion 00
+                      00006 
+0000   1683           00007         bsf     h'03',5     ;ponemos a 1 el bit 5 de STATUS(03h)
+0001   30FF           00008         movlw   b'11111111' ;cargamos en el registro w '11111111'
+0002   0085           00009         movwf   h'05'       ;configuramos TRISA (05h) como entradas
+0003   3000           00010         movlw   b'00000000' ;cargamos 0 en el registro w
+0004   0086           00011         movwf   h'06'       ;configuramos TRISB (06h) como salidas
+0005   1283           00012         bcf     h'03',5     ;Ponemos a 0 el bit 5 de status y pasamos a bank0
+                      00013 
+                      00014 ;---------------------Inicio de Programa Principal---------------------------
+                      00015 
+0006   0805           00016 inicio  movf    h'05',0     ;Cargamos en el registro w el valor del PORTA
+0007   0086           00017         movwf   h'06'       ;Pasamos este valor a PORTB
+0008   2???           00018         goto    inicio      ;Bucle para pasar al inicio del programa
+                      00019 
+                      00020         end                 ;fin del programa
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO9.   1-26-2015  14:24:18         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F84                           00000001
+inicio                            00000006
+reset                             00000000
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+
