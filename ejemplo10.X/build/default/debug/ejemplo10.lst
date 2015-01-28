@@ -1,0 +1,49 @@
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO10   1-27-2015  18:28:57         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;Interruptores y LEDs conectados a los puertos
+                      00002 
+                      00003         list p=16f84
+                      00004 
+  00000003            00005 status  equ     h'03'       ;dirección en Hexa del status
+  00000005            00006 porta   equ     h'05'       ;direccion en Hexa del puerto a
+  00000006            00007 portb   equ     h'06'       ;direccion en Hexa del puerto b
+                      00008 
+                      00009 ;-------------configuramos puertos--------------------------
+                      00010 
+                      00011 reset   org     0           ;el vector de reset es la direccion 00
+0000   1683           00012         bsf     status,5    ;ponemos a 1 el bit 5 de status
+0001   30FF           00013         movlw   h'FF'       ;cargamos en el registro w a FF
+0002   0085           00014         movwf   porta       ;configuramos el puerto a (05h)como entrada
+0003   3000           00015         movlw   h'00'       ;cargamos 0 en el registro w
+0004   0086           00016         movwf   portb       ;configuramos portb (06h) como salidas
+0005   1283           00017         bcf     status,5    ;ponemos a 0 el bit 5 de status y pasamos a bank0
+                      00018 
+                      00019 ;--------------iniciamos programa principal------------------
+0006   0805           00020 inicio  movf    porta,0     ;cargamos en el registro w el valor del puerto a
+0007   0086           00021         movwf   portb       ;pasamos este valor a puerto b
+0008   2???           00022         goto    inicio      ;bucle para pasar al inicio del programa
+                      00023 
+                      00024         end                 ;fin del programa
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO10   1-27-2015  18:28:57         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F84                           00000001
+__DEBUG                           
+inicio                            00000006
+porta                             00000005
+portb                             00000006
+reset                             00000000
+status                            00000003
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

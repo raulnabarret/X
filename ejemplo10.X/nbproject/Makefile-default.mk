@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=
+SOURCEFILES_QUOTED_IF_SPACED=ejemplo10.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=
-POSSIBLE_DEPFILES=
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ejemplo10.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/ejemplo10.o.d
 
 # Object Files
-OBJECTFILES=
+OBJECTFILES=${OBJECTDIR}/ejemplo10.o
 
 # Source Files
-SOURCEFILES=
+SOURCEFILES=ejemplo10.asm
 
 
 CFLAGS=
@@ -82,7 +82,23 @@ MP_LINKER_DEBUG_OPTION=
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/ejemplo10.o: ejemplo10.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ejemplo10.o.d 
+	@${RM} ${OBJECTDIR}/ejemplo10.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/ejemplo10.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG  -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/ejemplo10.lst\\\" -e\\\"${OBJECTDIR}/ejemplo10.err\\\" $(ASM_OPTIONS)   -o\\\"${OBJECTDIR}/ejemplo10.o\\\" \\\"ejemplo10.asm\\\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/ejemplo10.o"
+	@${FIXDEPS} "${OBJECTDIR}/ejemplo10.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
 else
+${OBJECTDIR}/ejemplo10.o: ejemplo10.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ejemplo10.o.d 
+	@${RM} ${OBJECTDIR}/ejemplo10.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/ejemplo10.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/ejemplo10.lst\\\" -e\\\"${OBJECTDIR}/ejemplo10.err\\\" $(ASM_OPTIONS)   -o\\\"${OBJECTDIR}/ejemplo10.o\\\" \\\"ejemplo10.asm\\\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/ejemplo10.o"
+	@${FIXDEPS} "${OBJECTDIR}/ejemplo10.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
 endif
 
 # ------------------------------------------------------------------------------------
