@@ -1,0 +1,45 @@
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO11   1-29-2015  21:14:56         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;Programa contador, visualizar por leds la cuenta en PortB
+                      00002 
+                      00003         list p=16f84
+                      00004 
+  00000001            00005 tmro    equ     h'01'       ;registro de configuracion y contador
+  00000003            00006 status  equ     h'03'       ;registro de status
+  00000006            00007 portb   equ     h'06'       ;registro de portb de salida
+                      00008 
+                      00009         org 0
+                      00010 
+0000   1683           00011         bsf     status,5    ;acceso al banco 1
+0001   3038           00012         movlw   b'00111000' ;configuramos TMRO como contador
+0002   0081           00013         movwf   tmro        ;por flanco ascendente
+0003   3000           00014         movlw   b'00000000' ;configuramos como salida
+0004   0086           00015         movwf   portb       ;el puerto B
+0005   1283           00016         bcf     status,5    ;pasamos al banco 0
+0006   0181           00017         clrf    tmro        ;inciamos el contador a 0
+                      00018 
+0007   0801           00019 inicio  movf    tmro,0      ;cargamos el contador en w
+0008   0086           00020         movwf   portb       ;pasamoe el valor cuenta al portb
+0009   2???           00021         goto    inicio      ;bucle
+                      00022         end                 ;final del programa
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO11   1-29-2015  21:14:56         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F84                           00000001
+inicio                            00000007
+portb                             00000006
+status                            00000003
+tmro                              00000001
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+
