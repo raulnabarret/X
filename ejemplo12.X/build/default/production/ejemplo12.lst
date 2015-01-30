@@ -1,0 +1,56 @@
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO12   1-29-2015  21:37:34         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;Programa de temporizacion del parpadeo de un led
+                      00002 
+Warning[215]: Processor superseded by command line.  Verify processor symbol.
+                      00003         list p=18f84
+                      00004 
+  00000003            00005 status      equ     h'03'       ;registro de status
+  00000006            00006 portb       equ     h'06'       ;registro de portb de salida
+  00000001            00007 timer       equ     h'01'       ;registro de timer
+                      00008             org 0
+                      00009 
+0000   1683           00010             bsf     status,5    ;acceso al banco1
+0001   30D5           00011             movlw   b'11010101' ;configuramos timer
+0002   0081           00012             movwf   timer       ;registro option del timer
+0003   3000           00013             movlw   b'00000000' ;configuramos como salida
+0004   0086           00014             movwf   portb       ;el puerto B
+0005   1283           00015             bcf     status,5    ;pasamos al banco 0
+0006   0186           00016             clrf    portb       ;iniciamos la salida portb a 0
+                      00017 
+0007   1406           00018 inicio      bsf     portb,0     ;ponemos en 1 en la salida 0 de portb
+0008   2???           00019             call    temp
+0009   1006           00020             bcf     portb,0     ;ponemos en 0 el bit 0 del portb
+000A   2???           00021             call    temp
+000B   2???           00022             goto    inicio      ;bucle
+                      00023 
+000C   0181           00024 temp        clrf    timer       ;ponemos el temporizador a 0
+Warning[207]: Found label after column 1. (bucle)
+000D   1F81           00025             bucle   btfss   timer,7 ;comprobamos si el temporizador llega a '10000000'
+000E   2???           00026             goto    bucle       ;volvemos al bucle
+000F   0008           00027             return              ;si el valor es b'10000000' del temporizador volvemos de la subrutina
+                      00028 
+                      00029             end                 ;final de programa
+MPASM 5.60  /USERS/ADMIN/DESKTOP/X/EJEMPLO12   1-29-2015  21:37:34         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F884                          00000001
+bucle                             0000000D
+inicio                            00000007
+portb                             00000006
+status                            00000003
+temp                              0000000C
+timer                             00000001
+
+Errors   :     0
+Warnings :     2 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

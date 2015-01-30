@@ -1,0 +1,36 @@
+MPLINK 5.06, LINKER
+Linker Map File - Created Thu Jan 29 21:37:37 2015
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000020
+                   .cinit    romdata   0x000010    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000011      
+            18 out of 4359 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    bucle   0x00000d    program     static /Users/Admin/Desktop/X/ejemplo12.X/ejemplo12.asm
+                   inicio   0x000007    program     static /Users/Admin/Desktop/X/ejemplo12.X/ejemplo12.asm
+                     temp   0x00000c    program     static /Users/Admin/Desktop/X/ejemplo12.X/ejemplo12.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   inicio   0x000007    program     static /Users/Admin/Desktop/X/ejemplo12.X/ejemplo12.asm
+                     temp   0x00000c    program     static /Users/Admin/Desktop/X/ejemplo12.X/ejemplo12.asm
+                    bucle   0x00000d    program     static /Users/Admin/Desktop/X/ejemplo12.X/ejemplo12.asm
+
+
