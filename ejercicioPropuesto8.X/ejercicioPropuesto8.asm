@@ -11,9 +11,9 @@ reset   org     0           ;el vector de reset es 00
 
 inicio  movlw   b'00111010' ;cargamos el numero binario al registro w
         movwf   reg1        ;cargamos el registro w en reg1
-        swapf   reg1,1
-        movfw   reg1
-        movwf   result
+        swapf   reg1,1      ;giramos reg1
+        movfw   reg1        ;cargamos en reg1 el resultado
+        movwf   result      ;cargamos el resultado en result
 
-        end
+        end                 ;fin del programa
 
